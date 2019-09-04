@@ -25,13 +25,13 @@ public class Calculate {
 		answer = (number1+number2)/2;
 		return answer;
 	}
-	public static double toDegrees(double number) {
+	public static double toDegrees(double radian) {
 		// A call toDegrees converts an angle measure given in degrees into radians. 
 		// The method accepts a double and returns a double.
-		// The method should use 3.14159 as an approximation for pi.
 		double answer = 0;
-		answer = ;
+		answer = radian*(180/3.14159);
 		return answer;
 	}
+	public static 
 
 }
