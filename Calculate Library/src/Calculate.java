@@ -77,5 +77,80 @@ public class Calculate {
 		int c = (number2*number4);
 		return ((ax + var + "^2") + "+" + (bx + var) + "+" + c);
 	}
-	
+	public static boolean isDivisibleBy(int num1, int num2) {
+		// A call to isDivisibleBy determines whether or not one integer is evenly divisible by another.
+		// The method accepts a double and returns a double
+		if (num1%num2 == 0) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	public static double absValue(double num) {
+		// A call to absValue returns the absolute value of the nunmber passed.
+		// The method accepts a double and returns a double.
+		if (num>=0) {
+			return num;
+		}else {
+			num = num*-1;
+			return num;
+		}
+	}
+	public static double max(double num1, double num2) {
+		// A call to max returns the larger of the values passed.
+		// The method accepts two integers and returns an int.
+		if  (num1 >= num2) {
+			return num1;
+		}else{
+			return num2;
+		}
+	}
+	public static double max(double num1, double num2, double num3) {
+		// Overload to the max method. 
+		// The method accepts three doubles and returns a double.
+		double test1 = max(num1, num2);
+		double test2 = max(num1, num3);
+		if (test1 >= test2) {
+			return test1;
+		}else {
+			return test2;
+		}	
+	}
+	public static int min(int num1, int num2) {
+		// A call to min returns the smaller of the values passed.
+		// The method accepts two integers and returns an int.
+		if (num1 <= num2) {
+			return num1;
+		}else {
+			return num2;
+		}
+	}
+	public static double round2(double num) {
+		// A call to round2 rounds a double correctly to 2 decimal places and returns a double.
+		num = (num*100)+0.5;
+		num = (int)num;
+		num = (double)num;
+		num = num/100;
+		return num;
+	}
+	public static double exponent(double num, int exponent) {
+		// A call to exponent raises a value to a positive integer power. 
+		// The method accepts a double and an integer and returns a double.
+		double base = num;
+		if (exponent > 0) {
+			for (int n=1; n<exponent; n++) {
+				num = num*base; }
+		return num;
+		}else {
+			num = num/num;
+			return num;
+		}
+	}
+	public static int factorial(int num) {
+		// A call to factorial returns the factorial of the value passed. 
+		// The method accepts an integer and returns an integer.
+		for (int n=1; n<num; n++) {
+			//working on  this
+		}
+	}
 }
