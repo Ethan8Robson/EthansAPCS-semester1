@@ -136,21 +136,30 @@ public class Calculate {
 	public static double exponent(double num, int exponent) {
 		// A call to exponent raises a value to a positive integer power. 
 		// The method accepts a double and an integer and returns a double.
-		double base = num;
-		if (exponent > 0) {
-			for (int n=1; n<exponent; n++) {
-				num = num*base; }
-		return num;
-		}else {
-			num = num/num;
-			return num;
+		double answer = 1;
+		for (int n=0; n<exponent; n++) {
+			answer = answer*num;
 		}
+		return answer;
 	}
 	public static int factorial(int num) {
 		// A call to factorial returns the factorial of the value passed. 
 		// The method accepts an integer and returns an integer.
-		for (int n=1; n<num; n++) {
-			//working on  this
+		int answer = 1;
+		for (int n=num; n>0; n--) {
+			answer = answer*n;
 		}
+		return answer;
+	}
+	public static boolean isPrime(int num) {
+		boolean answer = false;
+		for (int n=2; n<num; n++) {
+			if(isDivisibleBy(num, n)) {
+				answer = false;
+			}else {
+				answer = true;
+			}
+		}
+		return  answer;
 	}
 }
