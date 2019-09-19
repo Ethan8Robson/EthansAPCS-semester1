@@ -152,14 +152,35 @@ public class Calculate {
 		return answer;
 	}
 	public static boolean isPrime(int num) {
-		boolean answer = false;
+		// A call to isPrime determines whether or not an integer is prime.
+		// The method accepts an integer and returns a boolean.
+		boolean answer = true;
 		for (int n=2; n<num; n++) {
 			if(isDivisibleBy(num, n)) {
 				answer = false;
-			}else {
-				answer = true;
 			}
 		}
 		return  answer;
 	}
+	public static int gcf(int num1, int num2) {
+		// A call to sqrt returns an approximation of the square root of the value passed, rounded to two decimal places.
+		// The method accepts a double and returns a double.
+		int answer = 1;
+		for (int i = 1; i < max(num1, num2); i++) {
+			if (isDivisibleBy(num1, i) && isDivisibleBy(num2, i)) {
+				answer = i;
+			}
+		}
+		return answer;
+	}
+	public static double sqrt(double numToRoot) {
+		// A call to sqrt returns an approximation of the square root of the value passes, rounded to two decimal places.
+		// The method accepts a double and returns a double.
+		double sqrt = 0;
+		for (double i=0; (i*i) <= numToRoot; i += 0.001) {
+			sqrt = i;
+		}
+		return round2(sqrt); 
+	}
+	
 }
