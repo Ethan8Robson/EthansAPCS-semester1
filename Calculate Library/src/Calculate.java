@@ -47,7 +47,7 @@ public class Calculate {
 		return answer;
 	}
 	public static double discriminant(double number1, double number2, double number3) {
-		//A call to discriminant provides te coefficients of a quadratic equation in standard form (a, b, and c) and returns the value of the discriminant
+		//A call to discriminant provides the coefficients of a quadratic equation in standard form (a, b, and c) and returns the value of the discriminant
 		// The method accepts three doubles and returns a double
 		double answer = 0;
 		answer = (number2*number2)-(4*number1*number3);
@@ -77,10 +77,13 @@ public class Calculate {
 		int c = (number2*number4);
 		return ((ax + var + "^2") + "+" + (bx + var) + "+" + c);
 	}
-	public static boolean isDivisibleBy(int num1, int num2) {
+	public static boolean isDivisibleBy(int num, int factor) {
 		// A call to isDivisibleBy determines whether or not one integer is evenly divisible by another.
 		// The method accepts a double and returns a double
-		if (num1%num2 == 0) {
+		if (factor == 0) {
+			throw new IllegalArgumentException("Factor can't be zero!");
+		}
+		if (num%factor == 0) {
 			return true;
 		}else {
 			return false;
@@ -127,17 +130,29 @@ public class Calculate {
 	}
 	public static double round2(double num) {
 		// A call to round2 rounds a double correctly to 2 decimal places and returns a double.
-		num = (num*100)+0.5;
-		num = (int)num;
-		num = (double)num;
-		num = num/100;
-		return num;
+		if (num > 0) {
+			num = (num*100)+0.5;
+		    num = (int)num;
+		    num = (double)num;
+		    num = num/100;
+		    return num;
+		}else {
+			num = ((num*-1)*100)+0.5;
+		    num = (int)num;
+		    num = (double)num;
+		    num = num/100;
+		    return (num*-1);
+		}
+		
 	}
 	public static double exponent(double num, int exponent) {
 		// A call to exponent raises a value to a positive integer power. 
 		// The method accepts a double and an integer and returns a double.
+		if (exponent < 0) {
+			throw new IllegalArgumentException("Exponent can't be negative!");
+		}
 		double answer = 1;
-		for (int n=0; n<exponent; n++) {
+		for (int i=0; i<exponent; i++) {
 			answer = answer*num;
 		}
 		return answer;
@@ -145,9 +160,12 @@ public class Calculate {
 	public static int factorial(int num) {
 		// A call to factorial returns the factorial of the value passed. 
 		// The method accepts an integer and returns an integer.
+		if (num<0) {
+			throw new IllegalArgumentException("Number can't be negative!");
+		}
 		int answer = 1;
-		for (int n=num; n>0; n--) {
-			answer = answer*n;
+		for (int i=num; i>0; i--) {
+			answer = answer*i;
 		}
 		return answer;
 	}
@@ -155,8 +173,8 @@ public class Calculate {
 		// A call to isPrime determines whether or not an integer is prime.
 		// The method accepts an integer and returns a boolean.
 		boolean answer = true;
-		for (int n=2; n<num; n++) {
-			if(isDivisibleBy(num, n)) {
+		for (int i=2; i<num; i++) {
+			if(isDivisibleBy(num, i)) {
 				answer = false;
 			}
 		}
@@ -176,11 +194,30 @@ public class Calculate {
 	public static double sqrt(double numToRoot) {
 		// A call to sqrt returns an approximation of the square root of the value passes, rounded to two decimal places.
 		// The method accepts a double and returns a double.
+		if (numToRoot < 0) {
+			throw new IllegalArgumentException("Number to root can't be zero!");
+		}
 		double sqrt = 0;
 		for (double i=0; (i*i) <= numToRoot; i += 0.001) {
 			sqrt = i;
 		}
 		return round2(sqrt); 
+	}
+	public static String quadForm(int a, int b, int c) {
+		double root1 = 0;
+		double root2 = 0;
+		if (discriminant(a,b,c) < 0) {
+			return "No real roots";
+		}else {
+			root1 = round2(-b + sqrt(discriminant(a, b, c))) / (2*a);
+			root2 = round2(-b - sqrt(discriminant(a, b, c))) / (2*a);
+		}
+		if (root1 == root2) {
+			return "The root is " + root1;
+		}else {
+			return "The roots are " + root1 + " and " + root2;
+			
+		}
 	}
 	
 }
