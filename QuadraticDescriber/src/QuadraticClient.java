@@ -4,8 +4,9 @@ import java.util.Scanner;
 public class QuadraticClient {
 
 	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Welcome to the Quadratic Describer.");
 		for (boolean i = true; i == true;) {
-			Scanner scan = new Scanner(System.in);
 			System.out.println("Provide values for coefficients a, b, and c.");
 			System.out.print("a:");
 			double a = scan.nextDouble();
