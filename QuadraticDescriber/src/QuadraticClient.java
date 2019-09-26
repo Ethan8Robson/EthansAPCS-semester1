@@ -22,7 +22,7 @@ public class QuadraticClient {
 			System.out.println(description);
 			System.out.println("Do you want to keep going? (Type \"quit\" to end)");
 			decision = scan.next();
-		} while(!decision.equals("quit"));
+		} while(!decision.toUpperCase().equals("QUIT"));
 		scan.close();
 	}
 
