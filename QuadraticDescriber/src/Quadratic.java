@@ -39,8 +39,8 @@ public class Quadratic {
 		if (discriminant(a,b,c) < 0) {
 			return "None";
 		}else {
-			root1 = round2(-b + sqrt(discriminant(a, b, c))) / (2*a);
-			root2 = round2(-b - sqrt(discriminant(a, b, c))) / (2*a);
+			root1 = round2((-b + sqrt(discriminant(a, b, c))) / (2*a));
+			root2 = round2((-b - sqrt(discriminant(a, b, c))) / (2*a));
 		}
 		if (root1 == root2) {
 			return root1 + "";
