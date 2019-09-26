@@ -7,11 +7,11 @@ public class QuadraticClient {
 		for (boolean i = true; i == true;) {
 			Scanner scan = new Scanner(System.in);
 			System.out.println("Provide values for coefficients a, b, and c.");
-			System.out.println("a:");
+			System.out.print("a:");
 			double a = scan.nextDouble();
-			System.out.println("b:");
+			System.out.print("b:");
 			double b = scan.nextDouble();
-			System.out.println("c:");
+			System.out.print("c:");
 			double c = scan.nextDouble();
 			String description = Quadratic.quadrDescriber(a, b, c);
 			System.out.println(description);
