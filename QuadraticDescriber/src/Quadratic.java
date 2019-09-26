@@ -1,3 +1,6 @@
+// Ethan Robson
+// September 25, 2019
+// Math work for quadratic describer.
 
 public class Quadratic {
 	public static String quadrDescriber(double a, double b, double c) {

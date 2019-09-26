@@ -1,3 +1,6 @@
+// Ethan Robson
+// September 25, 2019
+// Describes a quadratic equation.
 
 import java.util.Scanner;
 
@@ -20,6 +23,7 @@ public class QuadraticClient {
 			System.out.println("Do you want to keep going? (Type \"quit\" to end)");
 			decision = scan.next();
 		} while(!decision.equals("quit"));
+		scan.close();
 	}
 
 }
