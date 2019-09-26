@@ -7,8 +7,8 @@ public class Quadratic {
 		}else {
 			direction = "Down";
 		}
-		double vertexX = -(b/(2*a));
-		double vertexY = ((a*(vertexX*vertexX)) + (b*vertexX) + c);
+		double vertexX = round2(-(b/(2*a)));
+		double vertexY = round2((a*(vertexX*vertexX)) + (b*vertexX) + c);
 		String vertex = ("(" + vertexX + ", " + vertexY + ")");
 		String xInts = quadForm(a, b, c);
 		double yInt = c;
