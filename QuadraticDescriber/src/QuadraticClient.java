@@ -12,7 +12,7 @@ public class QuadraticClient {
 		double b = scan.nextDouble();
 		System.out.println("c:");
 		double c = scan.nextDouble();
-		String decription = QuadraticDescriber(a, b, c);
+		String description = Quadratic.quadrDescriber(a, b, c);
 		System.out.println(description);
 	}
 

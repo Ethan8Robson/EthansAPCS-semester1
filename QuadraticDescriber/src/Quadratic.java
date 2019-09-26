@@ -3,11 +3,16 @@ public class Quadratic {
 	public static String quadrDescriber(double a, double b, double c) {
 		String direction = "";
 		if (a>=0) {
-			direction = Up;
+			direction = "Up";
 		}else {
-			direction = Up;
+			direction = "Down";
 		}
-		
+		double vertexX = -(b/(2*a));
+		double vertexY = ((a*(vertexX*vertexX)) + (b*vertexX) + c);
+		String vertex = ("(" + vertexX + ", " + vertexY + ")");
+		String xInts = quadForm(a, b, c);
+		double yInt = c;
+		return "Description of the graph of:\n y = " + a + "x^2 + " + b + " x + " + c + "\n\nOpens: " + direction + "\nAxis of Symmetry: " + vertexX + "\nVertex: " + vertex + "\nx-intercept(s): " + xInts + "\ny-intercept: " + yInt;
 	}
 	public static double sqrt(double numToRoot) {
 		// A call to sqrt returns an approximation of the square root of the value passes, rounded to two decimal places.
@@ -28,19 +33,19 @@ public class Quadratic {
 		answer = (number2*number2)-(4*number1*number3);
 		return answer;
 	}
-	public static String quadForm(int a, int b, int c) {
+	public static String quadForm(double a, double b, double c) {
 		double root1 = 0;
 		double root2 = 0;
 		if (discriminant(a,b,c) < 0) {
-			return "No real roots";
+			return "None";
 		}else {
 			root1 = round2(-b + sqrt(discriminant(a, b, c))) / (2*a);
 			root2 = round2(-b - sqrt(discriminant(a, b, c))) / (2*a);
 		}
 		if (root1 == root2) {
-			return "The root is " + root1;
+			return root1 + "";
 		}else {
-			return "The roots are " + root1 + " and " + root2;
+			return root1 + ", " + root2;
 			
 		}
 	}
