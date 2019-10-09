@@ -29,7 +29,7 @@ public class Calculate {
 		// A call to average returns the average of the values passed to it. 
 		// The method accepts 3 doubles and returns a double.
 		double answer = 0;
-		answer = (number1+number2+number3)/2;
+		answer = (number1+number2+number3)/3;
 		return answer;
 	}
 	public static double toDegrees(double radian) {
@@ -75,7 +75,7 @@ public class Calculate {
 		int ax = (number1*number3);
 		int bx = ((number1*number4) + (number2*number3));
 		int c = (number2*number4);
-		return ((ax + var + "^2") + "+" + (bx + var) + "+" + c);
+		return ((ax + var + "^2") + " + " + (bx + var) + " + " + c);
 	}
 	public static boolean isDivisibleBy(int num, int factor) {
 		// A call to isDivisibleBy determines whether or not one integer is evenly divisible by another.
@@ -184,7 +184,7 @@ public class Calculate {
 		// A call to sqrt returns an approximation of the square root of the value passed, rounded to two decimal places.
 		// The method accepts a double and returns a double.
 		int answer = 1;
-		for (int i = 1; i < max(num1, num2); i++) {
+		for (int i = 1; i <= max(num1, num2); i++) {
 			if (isDivisibleBy(num1, i) && isDivisibleBy(num2, i)) {
 				answer = i;
 			}
@@ -213,11 +213,13 @@ public class Calculate {
 			root2 = round2(-b - sqrt(discriminant(a, b, c))) / (2*a);
 		}
 		if (root1 == root2) {
-			return "The root is " + root1;
+			return root1 + "";
 		}else {
-			return "The roots are " + root1 + " and " + root2;
+			return root1 + " and " + root2;
 			
 		}
 	}
 	
 }
+
+

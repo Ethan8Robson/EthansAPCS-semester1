@@ -38,12 +38,9 @@ public class ProcessingNumbers {
 				}
 			}
 		}
-		System.out.println("Sum of Evens: " + sum + "\nMax: " + max + "\nMin: " + min);
-		if (maxEven == -1) {
-			System.out.println("There are no maximum even values.");
-		}else {
-			System.out.println("MaxEven: " + maxEven);
-		}
+		System.out.println("Sum of Evens: " + sum + "\nEven Max: " + maxEven + "\nMax: " + max + "\nMin: " + min);
 		userInput.close();
 	}
 }
+
+
