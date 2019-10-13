@@ -1,49 +1,71 @@
 
 import java.util.*;
+
 public class Hourglass {
 	
 	public static void main(String[] args) {
+		String decision = "";
 		Scanner scan = new Scanner (System.in);
-		System.out.println("How big will your hourglass be?");
-		int size = scan.nextInt();
-		closer(size);
-		top(size);
-		for (int gap = 1; gap <= size/2; gap++) {
-			System.out.print(" ");
-		}
-		System.out.println("||");
-		bottom(size);
-		closer(size);
+		do {
+			System.out.println("How big will your hourglass be?");
+			int size = scan.nextInt();
+			closer(size);
+			top(size);
+			middle(size);
+			bottom(size);
+			closer(size);
+			System.out.println("Do you want to continue? Type quit to exit.");
+			decision = scan.next();
+		} while (!decision.toUpperCase().equals("QUIT"));
 		scan.close();
 	}
+	
 	public static void top(int big) {
-		for (int line = 1; line <= big/2; line++) {
+		String top = "";
+		for (int line = 1; line < big/2; line++) {
 			for (int space = 0; space < line; space++) {
-				System.out.print(" ");
+				top += " ";
 			}
-			System.out.print("\\");
-			for (int colon = 1; colon <= -2*line+10; colon++) {
-				System.out.print(":");
+			top += "\\";
+			for (int colon = 1; colon <= -2*line+big; colon++) {
+				top +=":";
 			}
-			System.out.println("/");
+			top += "/\n";
 		}
+		System.out.print(top);
 	}
+	
 	public static void bottom(int big) {
-		for (int line = 1; line <= big/2; line++) {
-			for (int colon = 1; colon <= -2*line+10; colon++) {
-				System.out.print(":");
+		String bottom = "";
+		for (int line = 1; line < big/2; line++) {
+			for (int space = 1; space <= (big-line)-(big/2); space++) {
+				bottom += " ";
 			}
-			for (int space = 0; space < line; space++) {
-				System.out.print(" ");
+			bottom += "/";
+			for (int colon = 1; colon <= line*2; colon++) {
+				bottom += ":";
 			}
+			bottom += "\\\n";
 		}
+		System.out.print(bottom);
 	}
+	
 	public static void closer (int big) {
-		System.out.print("|");
+		String closer = "|";
 		for (int quote = 1; quote <= big; quote++) {
-			System.out.print("\"");
+			closer += "\"";
 		}
-		System.out.println("|");
+		closer += "|\n";
+		System.out.print(closer);
+	}
+	
+	public static void middle (int big) {
+		String mid = "";
+		for (int gap = 1; gap <= big/2; gap++) {
+			mid += " ";
+		}
+		mid += "||\n";
+		System.out.print(mid);
 	}
 }
 
