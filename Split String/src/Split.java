@@ -37,15 +37,17 @@ public class Split {
 		System.out.println(Arrays.toString(outputArray3));
 		String[] outputArray4 = "really I really like really red apples!".split("really");
 		System.out.println(Arrays.toString(outputArray4));
-		System.out.println(part1("bread"));
-		System.out.println(part1("mayobread"));
-		System.out.println(part1("bread"));
-		System.out.println(part1("breadmayobread"));
-		System.out.println(part1("breadbread"));
-		System.out.println(part1("breadmayobreadham"));
+		System.out.println(part1("breadhamhambreadhambread"));
 	}
 	public static String part1(String sandwich) {
-		return "";
+		int bread1 = sandwich.indexOf("bread");
+		int bread2 = sandwich.lastIndexOf("bread");
+		String contents = "";
+		String[] outputArray = sandwich.split("bread");
+		for (int i = bread1; i < bread2; i++) {
+			contents += outputArray[i];
+		}
+		return contents;
 
 		//Your task Part 1:
 
