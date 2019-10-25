@@ -150,6 +150,8 @@ public class Calculate {
 		// The method accepts a double and an integer and returns a double.
 		if (exponent < 0) {
 			throw new IllegalArgumentException("Exponent can't be negative!");
+		}else if (num == 0 && exponent == 0) {
+			throw new IllegalArgumentException("Base and exponent can't be negative!");
 		}
 		double answer = 1;
 		for (int i=0; i<exponent; i++) {
@@ -215,7 +217,11 @@ public class Calculate {
 		if (root1 == root2) {
 			return root1 + "";
 		}else {
-			return root1 + " and " + root2;
+			if (root1 > root2) {
+				return root1 + " and " + root2;
+			}else {
+				return root2 + " and " + root1;
+			}
 			
 		}
 	}

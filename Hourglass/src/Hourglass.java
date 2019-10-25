@@ -26,7 +26,11 @@ public class Hourglass {
 	public static void top(int big) {
 		// Creating the top of the hourglass.
 		String top = "";
-		for (int line = 1; line < big/2; line++) {
+		int oddEven = 0;
+		if (big % 2 != 0) {
+			oddEven++;
+		}
+		for (int line = 1; line < big/2 + oddEven; line++) {
 			for (int space = 0; space < line; space++) {
 				top += " ";
 			}
@@ -42,11 +46,7 @@ public class Hourglass {
 	public static void bottom(int big) {
 		// Creating bottom half of the hourglass.
 		String bottom = "";
-		int lines = big / 2 + 1;
-		if (big % 2 != 0) {
-			lines++;
-		}
-		for (int line = lines; line < big; line++) {
+		for (int line = big/2 + 1; line < big; line++) {
 			for (int space = 0; space < big - line; space++) {
 				bottom += " ";
 			}

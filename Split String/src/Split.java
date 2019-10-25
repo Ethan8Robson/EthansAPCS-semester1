@@ -8,6 +8,7 @@ import java.util.*;
 public class Split {
 
 	public static void main(String[] args) {
+		part1("cheesebreadhamhambreadhamcheese");
 		// Your task Part 0
 
 		//String.split();
@@ -29,7 +30,7 @@ public class Split {
 		//play around with String.split!
 
 		//What happens if you "I reallyreally likeapples".split("really") ?
-		String[] outputArray1 = "I like apples!".split(" ");
+		/*String[] outputArray1 = "I like apples!".split(" ");
 		System.out.println(Arrays.toString(outputArray1));
 		String[] outputArray2 = "I really like really red apples!".split("really");
 		System.out.println(Arrays.toString(outputArray2));
@@ -37,14 +38,15 @@ public class Split {
 		System.out.println(Arrays.toString(outputArray3));
 		String[] outputArray4 = "really I really like really red apples!".split("really");
 		System.out.println(Arrays.toString(outputArray4));
-		System.out.println(part1("breadhamhambreadhambread"));
+		System.out.println(part1("breadhamhambreadhambread"));*/
 	}
+	
 	public static String part1(String sandwich) {
 		int bread1 = sandwich.indexOf("bread");
 		int bread2 = sandwich.lastIndexOf("bread");
 		String contents = "";
 		String[] outputArray = sandwich.split("bread");
-		for (int i = bread1; i < bread2; i++) {
+		for (int i = 0; i < outputArray.length; i++) {
 			contents += outputArray[i];
 		}
 		return contents;
