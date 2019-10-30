@@ -9,6 +9,9 @@ import java.util.*;
 public class Split {
 
 	public static void main(String[] args) {
+		System.out.println(part1("applespineapplesbreadlettucetomatobaconmayohambreadcheese"));
+		System.out.println(part1("applebreadapple"));
+		System.out.println(part1("applebreadbreadbreadapple"));
 		System.out.println(part2("apples pineapples bread lettuce tomato bacon mayo ham bread cheese"));
 	}
 	
