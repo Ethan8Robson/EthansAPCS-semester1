@@ -11,11 +11,11 @@ public class ArraysLab3 {
 		int [] a2 = {7, 14, 21, 28, 35, 42, 49, 56};
 		int appendNum = 200;
 		int removeIdx = 5;
-		rotateRight(a1);
 		System.out.println(Arrays.toString(sum(a1, a2)));
 		System.out.println(Arrays.toString(append(a1, appendNum)));
 		System.out.println(Arrays.toString(remove(a1, removeIdx)));
 		System.out.println(sumEven(a1));
+		rotateRight(a1);
 
 	}
 	public static int[] sum(int[] arr1, int[] arr2) {
