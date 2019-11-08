@@ -217,7 +217,7 @@ public class Calculate {
 		if (root1 == root2) {
 			return root1 + "";
 		}else {
-			if (root1 > root2) {
+			if (root1 < root2) {
 				return root1 + " and " + root2;
 			}else {
 				return root2 + " and " + root1;

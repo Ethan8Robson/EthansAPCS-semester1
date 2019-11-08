@@ -7,7 +7,7 @@
 public class DoMath {
 
 	public static void main(String[] args) {
-		System.out.println(Calculate.quadForm(1, 1, 1));
+		System.out.println(Calculate.exponent(4,  0));
 		
 		
 		
