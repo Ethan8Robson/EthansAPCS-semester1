@@ -1,3 +1,7 @@
+// Ethan Robson
+// December 1, 2019
+// Calculates fractions
+
 package fracCalc;
 
 import java.util.*;
