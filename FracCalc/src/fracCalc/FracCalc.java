@@ -9,6 +9,7 @@ import java.util.*;
 public class FracCalc {
 
 	public static void main(String[] args) {
+		// Asks for user input and calls the methods.
 		Scanner scan = new Scanner(System.in);
 		String decision = "";
 		do {
@@ -20,6 +21,7 @@ public class FracCalc {
 		scan.close();
 	}
 	public static String produceAnswer(String input) {
+		// Formats the code into arrays and does the calculations.
 		String[] answer = input.split(" ");
 		String operand1 = answer[0];
 		String operand2 = answer[2];
@@ -58,6 +60,7 @@ public class FracCalc {
 		return returnAnswer[0] + "_" + returnAnswer[1] + "/" + returnAnswer[2];
 	}
 	public static int[] numSplit(String operand) {
+		// Splits the operands and operators.
 		int[] intValue = {0, 0, 1};
 		String[] frac = {"0", "1"};
 		String[] wholePart = operand.split("_");
@@ -74,6 +77,7 @@ public class FracCalc {
 		return intValue;
 	}
 	public static void toImproperFrac(int[] mixedNum) {
+		// Converts the number to an improper fraction.
 		if (mixedNum[0] >= 0) {
 			mixedNum[1] = mixedNum[2] * mixedNum[0] + mixedNum[1];
 		} else {
@@ -82,22 +86,27 @@ public class FracCalc {
 		mixedNum[0] = 0;
 	}
 	public static int[] multiply(int[] frac1, int[] frac2) {
+		// Multiplies the numerators and denominators.
 		int[] product = {frac1[0], frac1[1]*frac2[1], frac1[2]*frac2[2]};
 		return product;
 	}
 	public static int[] divide(int[] frac1, int[] frac2) {
+		// Divides the numerators and denominators.
 		int[] quotient = {0, frac1[1]*frac2[2], frac1[2]*frac2[1]};
 		return quotient;
 	}
 	public static int[] add(int[] frac1, int[] frac2) {
+		// Adds the two fractions.
 		int[] sum = {frac1[0]+frac2[0], frac1[1]+frac2[1], frac1[2]};
 		return sum;
 	}
 	public static int[] subtract(int[] frac1, int[] frac2) {
+		// Subtracts the two fractions.
 		int[] difference = {frac1[0]-frac2[0], frac1[1]-frac2[1], frac1[2]};
 		return difference;
 	}
 	public static void toComDen(int[] frac1, int[] frac2) {
+		// Converts the fractions to common denominators.
 		int tempVar = frac1[2]*frac2[2];
 		frac1[1] = frac1[1]*frac2[2];
 		frac2[1] = frac2[1]*frac1[2];
@@ -105,6 +114,7 @@ public class FracCalc {
 		frac2[2] = tempVar;
 	}
 	public static void reduceFrac(int[] frac) {
+		// Runs a for-loop to find the simplest fraction.
 		int gcf = 1;
 		for (int i = 1; i <= frac[2]; i++) {
 			if (frac[1] % i == 0 && frac[2] % i == 0) {
@@ -115,6 +125,7 @@ public class FracCalc {
 		frac[2] = frac[2] / gcf;
 	}
 	public static void toMixedNum(int[] frac) {
+		// Converts the fraction to a mixed number.
 		frac[0] = frac[1] / frac[2];
 		frac[1] = (frac[1] % frac[2]);
 	}
