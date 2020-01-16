@@ -2,11 +2,11 @@
 // December 1, 2019
 // Calculates fractions
 
-package fracCalc;
+package oldfracCalc;
 
 import java.util.*;
 
-public class FracCalc {
+public class OldFracCalc {
 
 	public static void main(String[] args) {
 		// Asks for user input and calls the methods.
